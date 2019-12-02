@@ -15,7 +15,6 @@ public class TeachAccountController {
     public String teachLoginSubmit(@RequestParam String teachId, @RequestParam String teachPassword) {
         TeachAccount teachAccount = teachAccountService.teachAccountQuery(teachId);
         if (teachAccount.getTeachPassword().equals(teachPassword)) {
-            System.out.println("123");
             return "redirect:teachIndex";
         }
         return "teachLogin";
