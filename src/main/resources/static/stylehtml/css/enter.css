@@ -1,0 +1,42 @@
+body{margin :0 auto;min-width:1024px;max-width:100%;}
+a,button{text-decoration: none;}
+.container{width: 100%;margin: 0 auto;padding: 0}
+.header-xingxing{width: 100%;height: 90px;background-color: #fefefe;border-bottom: 1px solid #e1e1e2;}
+.header-biaozhi{height: 90px;width: 340px;margin-left: 110px;float: left;}
+.header-biaozhi p{font-size: 26px;color: #333333;margin-top: 10px;padding-top: 10px;font-family:黑体;}
+.header-biaozhi span{font-size:18px ;color: hsl(0, 0%, 58%);padding-top: 0px;margin-top: 0px;line-height: 20px;}
+.header-biaozhi img{float: left;margin-top: 0px;}
+.top-right{float: right;font-size: 22px;margin-right: 10%;margin-top: 40PX;;}
+.top-right a{color: #000000;margin-left: 20px;margin-right: 20px;}
+.top-right a:hover{color:#20bfee}
+.top-right a:first-child{color: #20bfee;}
+.top-right span{margin-left: 5px;margin-right: 5px;}
+#mainDiv{width: 250px;height:250px;overflow: hidden;}
+#tbody{width: 100%;height: 500px;background-image: url("../img/6.jpg");}
+#a{float: right;font-size: 16px;font-family:楷体;}
+.b-logo{width: 100%;height: 500px;background-image: url("../img/6.jpg" );background-size:100%;}
+.b-logo-register{width: 350px;height: 450px;background-color:#ffffff;margin-top: 18px;;float: right;margin-right: 200px;}
+.b-logo-top{width: 100%;height: 90px;text-align: center;}
+.b-logo-top a{font-size: 20px;line-height: 100px;color: #666666}
+.b-logo-top a:first-child{color:#ff6700 }
+.link{width: 1px;height: 40px;border: 1px solid #e0e0e0;margin-left: 10px;margin-right: 10px;}
+.b-logo-botom{margin-top: 20PX;display: none}
+.b-logo-botom input{width: 250px;height: 40px;margin-left: 40px;;margin-bottom: 25px;font-size: 16px;padding-left: 18px;border: 1px solid #e0e0e0}
+#submit{width:250px;margin-top: 12px;height: 40px;margin-left: 30px;margin-bottom: 18px;background-color: #ff6700;border: 0px;color: #ffffff}
+#a-left{margin-left:38px;text-align: center;color: #ff6700;font-size: 18px;}
+.a-right {margin-left: 70px;font-size: 18px;display: inline}
+.b-logo-bottom1{text-align:center;display:block ;height: 450px;}
+.b-logo-bottom1 img{margin-top: 10px;text-align: center;}
+.footer{height: 40px;width: 100%;margin-top: 10px;}
+.renlian{width: 200px;margin-top: 12px;;height: 40px;margin-left: 0px;margin-bottom: 18px;background-color: #ff6700;border: 0px;color: #ffffff}
+.footer,.footer-value{margin-top: 40px;;text-align: center;font-family:宋体;}
+#shijian{width: 250px;height: 250px;margin-left: 50px;}
+#video{height: 100%;object-fit: fill;}
+.msg{
+    color: #ff6700;
+    font-size: 14px;
+    padding-left: 40px;
+    padding-top: 10px;
+    clear: both;
+    font-weight: bold;
+}

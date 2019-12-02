@@ -1,0 +1,11 @@
+#mainDiv{width:250px;height: 250px;float: left}
+body{background-image: url("../img/7.jpg");margin: 0 auto;padding: 0;}
+#re-left{float: left; width: 300px;margin: 100px;margin-top:20px;
+    margin-right: 10px;padding: 20px;opacity: 0.99;  border:1px solid #CCEFF5;
+    background-color: #FAFCFD}
+#re-right{float: left;margin-top: 20px;background-color: white;width:30%;opacity: 0.99; border:1px solid #CCEFF5;
+    background-color: #FAFCFD;
+    padding: 20px}
+input{width: 250px;height: 30px;margin-left: 40px;;margin-bottom: 10px;font-size: 16px;padding-left: 18px;border: 1px solid #e0e0e0}
+label{display: inline;}
+.container{margin: 0 auto;padding: 0}
