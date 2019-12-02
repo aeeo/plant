@@ -3,76 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <title>学生登陆页面</title>
-    <link rel="stylesheet" href="stylehtml/css/enter.css"/>
     <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css" >
     <script src="jquery/jquery-3.3.1.min.js"></script>
-<#--    <link rel="stylesheet" href="layui/css/layui.css"/>-->
-
+    <link rel="stylesheet" href="layui/css/layui.css"/>
     <script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
-    </head>
-    <body>
+</head>
+<body>
     <#--提交表单-->
     <div class="container">
-<#--        <#include "top.ftl">-->
-        <div id="tbody">
+        <h1>行星人脸识别考勤系统</h1>
+        <#--获取摄像头区域-->
+        <div id="mainDiv" class="col-lg-4 col-md-5  col-sm-6">
+            <video id='video' width='100%' height='100%' autoplay='autoplay'>
 
-              <div class="b-logo-register">
-                  <div class="b-logo-top">
-                      <a  class="zhanghao">人脸登录</a>
-                      <span class="link"></span>
-                      <a  class="saoma">账号登录</a>
-                  </div>
-              <#--获取摄像头区域-->
-                <div class="b-logo-bottom1" >
-                    <div id="shijian">
-                        <div id="mainDiv">
-                    <video id='video' width='100%' height='100%' autoplay='autoplay'> </video>
-                    <canvas id='canvas' width='250px' height='250px' style='display: none'> </canvas>
-                        </div>
-                        <input type="submit" value="人脸登录" class="renlian" onclick="faceLogin()"">
-                                               <br>
-                        <a onclick="window.location.href='register'"" >立即注册</a>
-                        |
-                        <a href="" >忘记密码?</a>
-                </div>
-                </div>
-                  <div class="b-logo-botom">
-                        <form role="form" action="/accountLogin" method="post">
-                            <input type="text" placeholder="邮箱/手机号码/学号"  name="userId" id="userId" />
-                            <input type="password" placeholder="密码"  name="userPassword" id="password" />
-                            <input type="submit" value="登录" id="submit" >
-                            <div class="a-right"></div>
-                           <a onclick="window.location.href='register'"" >立即注册</a>
-                            |
-                            <a href="" >忘记密码?</a>
-                        </form>
-                  </div>
+            </video>
+            <canvas id='canvas' width='500px' height='500px' style='display: none'>
 
-                </div>
-          </div>
-        <div class="footer">
-            <div class="footer-vlaue">制作：赵通、柯凯、王国强、李康、蒋莉莉<br>
-                软件著作权由@<strong>囊中羞涩</strong>设计组所有
+            </canvas>
+        </div>
+        <div>
+            <button onclick="faceLogin()" class="btn btn-default">人脸识别登录</button>
+        </div>
+
+        <div class="row clearfix">
+            <div class="col-md-4 column">
+                <form role="form" action="/accountLogin" method="post">
+                    <div class="form-group" >
+                        <label for="">用户名</label>
+                        <input type="text" class="form-control" name="userId" id="userId" />
+                    </div>
+                    <div class="form-group">
+                        <label for="">密码</label>
+                        <input type="password" class="form-control" name="userPassword" id="password" />
+                    </div>
+                    <button type="submit" class="btn btn-default">账号登录提交</button>
+                </form>
             </div>
         </div>
+
+        <div>
+            <button onclick="window.location.href='register'" class="btn btn-default">注册</button>
+        </div>
+
     </div>
 
 <script>
-    $(document).ready(function(){
-        $(".zhanghao").hover(function(){
-            $(".b-logo-botom").css('display', 'none');
-            $(".b-logo-bottom1").css('display', 'block');
-            $(this).css('color','#ff6700');
-            $(".saoma").css('color','#666666');
-        });
-        $(".saoma").hover(function(){
-            $(".b-logo-botom").css('display', 'block');
-            $(".b-logo-bottom1").css('display', 'none');
-            $(this).css('color','#ff6700');
-            $(".zhanghao").css('color','#666666');
-
-        });
-    });
     $(function () {
         getMedia();
     })
@@ -104,6 +79,8 @@
         //保存当前图片
         var base64File = canvas.toDataURL();
         formData.append("file", base64File);
+
+
         $.ajax({
             type: "post",
             url: "/faceRecogn",
@@ -112,531 +89,6 @@
             processData: false,
             async: false,
             success: function (text) {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 alert(text);
                 window.location.href = 'index';
             },
