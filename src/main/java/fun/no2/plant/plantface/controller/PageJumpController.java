@@ -5,18 +5,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class PageJumpController {
-    @RequestMapping(value = "register")
+
+    @RequestMapping(value = "/")
+    public String defaultPage(){
+        return "login";
+    }
+    @RequestMapping(value = "/register")
     public String register(){
         return "register";
     }
 
 
-    @RequestMapping(value = "teachIndex")
+    @RequestMapping(value = "/teachIndex")
     public String teachIndex(){
         return "teachIndex";
     }
 
-    @RequestMapping(value = "teachLogin")
+    @RequestMapping(value = "/teachLogin")
     public String teachLogin(){
         return "teachLogin";
     }

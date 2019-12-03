@@ -176,7 +176,14 @@ public class FaceEngineServiceImpl implements FaceEngineService {
 
             //人脸检测
             int i = faceEngine.detectFaces(imageInfo.getImageData(), imageInfo.getWidth(), imageInfo.getHeight(), imageInfo.getImageFormat(), faceInfoList);
-            System.out.println("人脸个数：" + i + "...");
+
+            System.out.println("类型："+imageInfo.getImageData().toString());
+            System.out.println("宽："+imageInfo.getWidth());
+            System.out.println("高："+imageInfo.getHeight());
+            System.out.println("格式："+imageInfo.getImageFormat());
+            System.out.println("人脸列表："+faceInfoList.toString());
+
+            System.out.println("人脸识别状态码：" + i + "...");
             if (CollectionUtil.isNotEmpty(faceInfoList)) {
                 FaceFeature faceFeature = new FaceFeature();
                 //提取人脸特征

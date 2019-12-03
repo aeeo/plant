@@ -30,7 +30,7 @@
                                 <video id='video' width='100%' height='100%' autoplay='autoplay'> </video>
                                 <canvas id='canvas' width='250px' height='250px' style='display: none'> </canvas>
                             </div>
-                            <input type="submit" value="人脸登录" class="renlian" onclick="faceLogin()"><br>
+                            <input type="button" value="人脸登录" class="renlian" onclick="faceLogin()"><br>
                             <a onclick="window.location.href='register'">立即注册</a>
                             <a href="" >忘记密码?</a>
                         </div>

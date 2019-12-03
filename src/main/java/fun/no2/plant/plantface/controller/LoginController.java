@@ -8,11 +8,6 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 public class LoginController {
-    @RequestMapping(value = "index1")
-    public String index1() {
-        return "index1";
-    }
-
     @RequestMapping(value = "login")
     public String login() {
         return "login";
