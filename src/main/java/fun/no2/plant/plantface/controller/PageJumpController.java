@@ -10,13 +10,14 @@ public class PageJumpController {
         return "register";
     }
 
-    @RequestMapping(value = "teachLogin")
-    public String teachLogin(){
-        return "teachLogin";
-    }
 
     @RequestMapping(value = "teachIndex")
     public String teachIndex(){
         return "teachIndex";
+    }
+
+    @RequestMapping(value = "teachLogin")
+    public String teachLogin(){
+        return "teachLogin";
     }
 }
