@@ -197,7 +197,7 @@
     var account = {};
     $(function () {
         stuInfo();
-    })
+    });
     // 学生信息列表
     function stuInfo() {
         let dynamic = $("#dynamic");

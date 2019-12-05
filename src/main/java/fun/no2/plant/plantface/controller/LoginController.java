@@ -19,7 +19,7 @@ public class LoginController {
         return "index";
     }
 
-    @RequestMapping(value = "/index")
+    @RequestMapping(value = "index")
     public String index(HttpServletRequest request) {
         if(request.getSession().getAttribute("newLogin") == "0"){
             return "index";

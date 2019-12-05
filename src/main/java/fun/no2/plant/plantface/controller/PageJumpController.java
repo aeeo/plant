@@ -25,4 +25,16 @@ public class PageJumpController {
     public String teachLogin(){
         return "teachLogin";
     }
+
+
+    @RequestMapping(value = "teachCourse")
+    public String teachCourse(){
+        return "teachCourse";
+    }
+    @RequestMapping(value = "teachInfoMod")
+    public String teachInfoMod(){
+        return "teachInfoMod";
+    }
+
+
 }

@@ -2,7 +2,7 @@
 <html >
 <head>
 <meta charset="UTF-8">
-<title>行星人脸识别考勤系统教师管理</title>
+<title>行星教师管理系统</title>
 <link rel="stylesheet" href="teach/css/style.css">
 </head>
 
