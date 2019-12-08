@@ -4,21 +4,58 @@
     <meta charset="UTF-8">
     <title>学生信息首页</title>
     <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="stylehtml/css/enter.css"/>
     <script src="jquery/jquery-3.3.1.min.js"></script>
     <script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <link rel="stylesheet" href="layui/css/layui.css"/>
     <script type="text/javascript" src="jquery/jquery-cookie/jquery.cookie.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylehtml/css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="stylehtml/css/flexslider.css">
+    <script type="text/javascript" src="stylehtml/js/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="stylehtml/js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylehtml/css/thems.css">
+    <link rel="stylesheet" type="text/css" href="stylehtml/css/responsive.css">
+    <script language="javascript">
+        $(window).load(function() {
+            $('.flexslider').flexslider({
+                animation: "slide"
+            });
+        });
+    </script>
 </head>
 <body>
 <div class="container">
-    <h1 class="text-center">学生信息首页</h1>
-    <button class="btn btn-primary btn-default btn-block" id="stuInfo" onclick="stuInfo()">学生信息</button>
-    <button class="btn btn-primary btn-default btn-block" id="stuInfoMod" onclick="stuInfoMod()">信息修改</button>
-    <button class="btn btn-primary btn-default btn-block" id="checkWork" onclick="checkWork()">考勤情况</button>
-    <button class="btn btn-default" id="logoutSession" onclick="logoutSession()">注销</button>
-    <button class="btn btn-default" id="modStuPassword" onclick="modStuPassword();">修改密码</button>
+     <#include "top.ftl">
+    <div class="scd clearfix">
+        <div class="scd_l">
+            <div class="title"></div>
+            <ul class="s_nav">
+                <li class="now"><a  id="stuInfo" onclick="stuInfo()"><em>学生信息</em></a></li>
+                <li><a  id="stuInfoMod" onclick="stuInfoMod()"><em>信息修改</em></a></a></li>
+                <li> <a  id="checkWork" onclick="checkWork()"><em>考勤情况</em></a></li>
+                <li><a  id="modStuPassword" onclick="modStuPassword();"><em>修改密码</em></a></li>
+                <li><a  id="logoutSession" onclick="logoutSession()"><em>注销</em></a></li>
+            </ul>
+        </div>
+        <div class="scd_r">
+            <div class="s_title">
 
-    <div id="dynamic"></div>
+                <div class="pst">
+                    当前位置：
+                    <a href="">首页</a>>
+                    <a href="">关于行星考勤</a>>
+                    <a href="">个人信息</a>
+                </div>
+            </div>
+            <div class="scd_m">
+
+            </div>
+        </div>
+
+    </div>
+<#include "footer.ftl">
+
+
     <#--    学生信息展示 bootstrap的样式-->
         <#--<div class="col-md-12 column">
             <dl>
@@ -195,111 +232,73 @@
 </div>
 <script>
     var account = {};
-    $(function () {
-        stuInfo();
-    });
-    // 学生信息列表
-    function stuInfo() {
-        let dynamic = $("#dynamic");
-        dynamic.empty();
-        let stuInfoList = "<div class=\"col-md-12 column\">\n" +
-            "            <dl>\n" +
-            "                <dt>\n" +
-            "                    学号\n" +
-            "                </dt>\n" +
-            "                <dd id=\"stuId\">\n" +
-            "\n" +
-            "                </dd>\n" +
-            "                <dt>\n" +
-            "                    姓名\n" +
-            "                </dt>\n" +
-            "                <dd id=\"stuName\">\n" +
-            "\n" +
-            "                </dd>\n" +
-            "                <dt>\n" +
-            "                    性别\n" +
-            "                </dt>\n" +
-            "                <dd id=\"stuSex\">\n" +
-            "\n" +
-            "                </dd>\n" +
-            "                <dt>\n" +
-            "                    学校\n" +
-            "                </dt>\n" +
-            "                <dd id=\"stuSchool\">\n" +
-            "\n" +
-            "                </dd>\n" +
-            "                <dt>\n" +
-            "                    学院\n" +
-            "                </dt>\n" +
-            "                <dd id=\"stuDepart\">\n" +
-            "\n" +
-            "                </dd>\n" +
-            "                <dt>\n" +
-            "                    专业\n" +
-            "                </dt>\n" +
-            "                <dd id=\"stuMajor\">\n" +
-            "\n" +
-            "                </dd>\n" +
-            "                <dt>\n" +
-            "                    年级\n" +
-            "                </dt>\n" +
-            "                <dd id=\"stuGrade\">\n" +
-            "\n" +
-            "                </dd>\n" +
-            "                <dt>\n" +
-            "                    班级\n" +
-            "                </dt>\n" +
-            "                <dd id=\"stuClass\">\n" +
-            "\n" +
-            "                </dd>\n" +
-            "                <dt>\n" +
-            "                    联系方式\n" +
-            "                </dt>\n" +
-            "                <dd id=\"stuPhone\">\n" +
-            "\n" +
-            "                </dd>\n" +
-            "            </dl>\n" +
-            "        </div>";
-        dynamic.append(stuInfoList);
-        let stuId = new FormData;
-        stuId.append("stuId", $.cookie("stuId"));
-        $.ajax({
-            type: "post",
-            url: "/stuInfoQuery",
-            data: stuId,
-            contentType: false,
-            processData: false,
-            async: false,
-            success: function (data) {
-                account.stuId = data.stuId;
-                account.stuName = data.stuName;
-                account.stuSex = data.stuSex;
-                account.stuSchool = data.stuSchool;
-                account.stuDepart = data.stuDepart;
-                account.stuMajor = data.stuMajor;
-                account.stuGrade = data.stuGrade;
-                account.stuClass = data.stuClass;
-                account.stuPhone = data.stuPhone;
+$(function () {
+    stuInfo();
+})
+// 学生信息列表
+function stuInfo() {
+    let dynamic = $(".scd_m");
+    dynamic.empty();
+    let stuInfoList = "<div class=\"message\">\n" +
+            "               <p>我的资料</p>\n"+
+            "                <hr>\n" +
+            "                <div class=\"message-bd\">\n" +
+            "                    <div class=\"message-bd-left\">\n" +
+            "                           姓名：<span id=\"stuName\"></span><br>\n" +
+            "                           学号：<span id=\"stuId\"></span><br>\n" +
+    "                                   学院：<span id=\"stuDepart\"></span><br>\n" +
+    "                                   年级：<span id=\"stuGrade\"></span><br>\n" +
+    "                                   联系方式：<span id=\"stuPhone\"></span>\n" +
+    "                             </div>\n" +
+    "                             <div class=\"message-bd-right\">\n" +
+    "                                   性别：<span id=\"stuSex\"><br></span><br>\n" +
+    "                                   学校：<span id=\"stuSchool\"></span><br>\n" +
+    "                                   专业：<span id=\"stuMajor\"></span><br>\n" +
+    "                                   班级：<span id=\"stuClass\"></span>\n" +
+    "                             </div>\n" +
+    "                         </div>\n" +
+    "                       </div>";
+    dynamic.append(stuInfoList);
+    let stuId = new FormData;
+    stuId.append("stuId", $.cookie("stuId"));
+    $.ajax({
+        type: "post",
+        url: "/stuInfoQuery",
+        data: stuId,
+        contentType: false,
+        processData: false,
+        async: false,
+        success: function (data) {
+            account.stuId = data.stuId;
+            account.stuName = data.stuName;
+            account.stuSex = data.stuSex;
+            account.stuSchool = data.stuSchool;
+            account.stuDepart = data.stuDepart;
+            account.stuMajor = data.stuMajor;
+            account.stuGrade = data.stuGrade;
+            account.stuClass = data.stuClass;
+            account.stuPhone = data.stuPhone;
 
-                $("#stuId").text(data.stuId);
-                $("#stuName").text(data.stuName);
-                $("#stuSex").text(data.stuSex);
-                $("#stuSchool").text(data.stuSchool);
-                $("#stuDepart").text(data.stuDepart);
-                $("#stuMajor").text(data.stuMajor);
-                $("#stuGrade").text(data.stuGrade);
-                $("#stuClass").text(data.stuClass);
-                $("#stuPhone").text(data.stuPhone);
-            },
-            error: function () {
-                alert("错误！")
-            }
-        })
-    }
+            $("#stuId").text(data.stuId);
+            $("#stuName").text(data.stuName);
+            $("#stuSex").text(data.stuSex);
+            $("#stuSchool").text(data.stuSchool);
+            $("#stuDepart").text(data.stuDepart);
+            $("#stuMajor").text(data.stuMajor);
+            $("#stuGrade").text(data.stuGrade);
+            $("#stuClass").text(data.stuClass);
+            $("#stuPhone").text(data.stuPhone);
+        },
+        error: function () {
+            alert("错误！")
+        }
+    })
+}
+
 
     //学生信息修改
     function stuInfoMod() {
-        let dynamic = $("#dynamic");
+        let dynamic = $(".scd_m");
         // let modStuList = "<form id=\"formMod\" class=\"layui-form\" method =\"post\" action=\"/stuStuInfoMod\">\n" +
         let modStuList = "<form id=\"formMod\" class=\"layui-form\" method =\"post\">\n" +
             "        <div class=\"layui-form-item\">\n" +
@@ -400,7 +399,7 @@
     }
 
     function checkWork() {
-        let dynamic = $("#dynamic");
+        let dynamic = $(".scd_m");
         let checkList = "<div class=\"row clearfix\">\n" +
             "        <div class=\"col-md-12 column\">\n" +
             "            <table id='checktable' class=\"table table-bordered table-hover\">\n" +
@@ -478,7 +477,7 @@
     }
     function modStuPassword(){
 
-        let dynamic = $("#dynamic");
+        let dynamic = $(".scd_m");
         dynamic.empty();
         let modPasswordList = "<div class=\"row clearfix\">\n" +
             "        <div class=\"col-md-4 column\">\n" +
@@ -491,6 +490,10 @@
             "                    <label for=\"\">密码</label>\n" +
             "                    <input id=\"newPassword\" type=\"Password\" class=\"form-control\" name=\"newPassword\"/>\n" +
             "                </div>\n" +
+                "                <div class=\"form-group\">\n" +
+                "                    <label for=\"\">确认密码</label>\n" +
+                "                    <input id=\"newPassword\" type=\"Password\" class=\"form-control\" name=\"newPassword\"/>\n" +
+                "                </div>\n" +
             "                <button type=\"button\" class=\"btn btn-default\" onclick=\"modStuPasswordSubmit()\">修改密码</button>\n" +
             "            </form>\n" +
             "        </div>\n" +

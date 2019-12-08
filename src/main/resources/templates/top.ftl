@@ -19,7 +19,10 @@
     <div class="top-right">
         <a onclick="window.location.href='login'">首页</a>
         <a href="#">联系我们</a>
-        <a href="#">帮助</a></div>
+        <a href="#">帮助</a>
+        <a href="teachLogin" target="_blank">教师端</a>
+    </div>
 </div>
+
 </body>
 </html>

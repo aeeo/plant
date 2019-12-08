@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <title>学生登陆页面</title>
     <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css" >
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <script src="jquery/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" href="layui/css/layui.css"/>
     <link rel="stylesheet" href="stylehtml/css/enter.css"/>
-    <script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+
 </head>
 <body>
 <#--<div th:include="top.ftl"></div>-->
@@ -30,7 +31,7 @@
                                 <video id='video' width='100%' height='100%' autoplay='autoplay'> </video>
                                 <canvas id='canvas' width='250px' height='250px' style='display: none'> </canvas>
                             </div>
-                            <input type="button" value="人脸登录" class="renlian" onclick="faceLogin()"><br>
+                            <input type="submit" value="人脸登录" class="renlian" onclick="faceLogin()"><br>
                             <a onclick="window.location.href='register'">立即注册</a>
                             <a href="" >忘记密码?</a>
                         </div>
@@ -40,7 +41,7 @@
                             <input type="text" placeholder="邮箱/手机号码/学号"  name="userId" id="userId" />
                             <input type="password" placeholder="密码"  name="userPassword" id="password" />
                             <input type="submit" value="登录" id="submit" >
-                            <div class="a-right"></div>
+                            <br>
                            <a onclick="window.location.href='register'">立即注册</a>
                             |
                             <a href="" >忘记密码?</a>
@@ -49,11 +50,7 @@
 
                 </div>
           </div>
-        <div class="footer">
-            <div class="footer-vlaue">制作：赵通、柯凯、王国强、李康、蒋莉莉<br>
-                软件著作权由@<strong>囊中羞涩</strong>设计组所有
-            </div>
-        </div>
+        <#include "footer.ftl">
     </div>
 
 <script>
