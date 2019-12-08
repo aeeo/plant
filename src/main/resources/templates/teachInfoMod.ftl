@@ -256,7 +256,7 @@
                     account.teachPhone = data.teachPhone;
 
                     $("#teachId").val(data.teachId);
-                    $("#teachName").val(data.teachSex);
+                    $("#teachName").val(data.teachName);
                     $("#teachSex").val(data.teachSex);
                     $("#teachSchool").val(data.teachSchool);
                     $("#teachDepart").val(data.teachDepart);

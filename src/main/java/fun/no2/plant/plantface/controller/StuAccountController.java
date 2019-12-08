@@ -85,6 +85,8 @@ public class StuAccountController {
         return stuCheckingList  ;
     }
 
+
+
     @RequestMapping(value = "/modStuPassword")
     @ResponseBody
     public String modStuPassword(@RequestParam String stuId,@RequestParam String oldPassword, @RequestParam String newPassword) {

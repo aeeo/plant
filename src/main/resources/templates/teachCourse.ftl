@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
@@ -145,63 +147,103 @@
 
                     <div class="col-md-8 col-xs-12">
                         <div class="white-box">
-                            <form class="form-horizontal form-material">
+                            <form id="courseForm" class="form-horizontal form-material">
                                 <div class="form-group">
                                     <label class="col-sm-12">选择课程</label>
                                     <div class="col-sm-12">
                                         <select id="courseSelect" class="form-control form-control-line">
-                                            <option>London</option>
                                         </select>
                                     </div>
                                 </div>
+
                                 <div class="form-group">
-                                    <label class="col-md-12">课程名</label>
+                                    <label class="col-md-12">课程地点</label>
                                     <div class="col-md-12">
-                                        <input name="courseName" type="text" placeholder="Johnathan Doe"
+                                        <input id="courseSite" name="courseSite" type="text" placeholder="输入课程地点"
                                                class="form-control form-control-line"> </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="example-email" class="col-md-12"></label>
-                                    <div class="col-md-12">
-                                        <input type="email" placeholder="johnathan@admin.com"
-                                               class="form-control form-control-line" name="example-email"
-                                               id="example-email"> </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-md-12">Password</label>
-                                    <div class="col-md-12">
-                                        <input type="password" value="password" class="form-control form-control-line">
+                                    <label class="col-md-12">课程时间</label>
+                                    <div id="coursseDay" class="col-md-12">
+                                        周一
+                                    </div>
+                                    <br />
+                                    <div id="courseSection" class="col-md-12">
+                                        <input name="classCheckbox" value="class_1_1_2" type="checkbox"> 1,2节
+                                        <input name="classCheckbox" value="class_1_3_4" type="checkbox"> 3,4节
+                                        <input name="classCheckbox" value="class_1_5_6" type="checkbox"> 5,6节
+                                        <input name="classCheckbox" value="class_1_7_8" type="checkbox"> 7,8节
+                                    </div>
+
+                                    <div id="coursseDay" class="col-md-12">
+                                        周二
+                                    </div>
+                                    <br />
+                                    <div id="courseSection" class="col-md-12">
+                                        <input name="siteCheckbox" value="class_2_1_2" type="checkbox"> 1,2节
+                                        <input name="siteCheckbox" value="class_2_3_4" type="checkbox"> 3,4节
+                                        <input name="siteCheckbox" value="class_2_5_6" type="checkbox"> 5,6节
+                                        <input name="siteCheckbox" value="class_2_7_8" type="checkbox"> 7,8节
+                                    </div>
+
+                                    <div id="coursseDay" class="col-md-12">
+                                        周三
+                                    </div>
+                                    <br />
+                                    <div id="courseSection" class="col-md-12">
+                                        <input name="siteCheckbox" value="class_3_1_2" type="checkbox"> 1,2节
+                                        <input name="siteCheckbox" value="class_3_3_4" type="checkbox"> 3,4节
+                                        <input name="siteCheckbox" value="class_3_5_6" type="checkbox"> 5,6节
+                                        <input name="siteCheckbox" value="class_3_7_8" type="checkbox"> 7,8节
+                                    </div>
+
+                                    <div id="coursseDay" class="col-md-12">
+                                        周四
+                                    </div>
+                                    <br />
+                                    <div id="courseSection" class="col-md-12">
+                                        <input name="siteCheckbox" value="class_4_1_2" type="checkbox"> 1,2节
+                                        <input name="siteCheckbox" value="class_4_3_4" type="checkbox"> 3,4节
+                                        <input name="siteCheckbox" value="class_4_5_6" type="checkbox"> 5,6节
+                                        <input name="siteCheckbox" value="class_4_7_8" type="checkbox"> 7,8节
+                                    </div>
+
+                                    <div id="coursseDay" class="col-md-12">
+                                        周五
+                                    </div>
+                                    <br />
+                                    <div id="courseSection" class="col-md-12">
+                                        <input name="siteCheckbox" value="class_5_1_2" type="checkbox"> 1,2节
+                                        <input name="siteCheckbox" value="class_5_3_4" type="checkbox"> 3,4节
+                                        <input name="siteCheckbox" value="class_5_5_6" type="checkbox"> 5,6节
+                                        <input name="siteCheckbox" value="class_5_7_8" type="checkbox"> 7,8节
                                     </div>
                                 </div>
+
                                 <div class="form-group">
-                                    <label class="col-md-12">Phone No</label>
-                                    <div class="col-md-12">
-                                        <input type="text" placeholder="123 456 7890"
-                                               class="form-control form-control-line"> </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-md-12">Message</label>
-                                    <div class="col-md-12">
-                                        <textarea rows="5" class="form-control form-control-line"></textarea>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-12">Select Country</label>
+                                    <label class="col-sm-12">选择班级</label>
                                     <div class="col-sm-12">
-                                        <select class="form-control form-control-line">
-                                            <option>London</option>
-                                            <option>India</option>
-                                            <option>Usa</option>
-                                            <option>Canada</option>
-                                            <option>Thailand</option>
+                                        <select id="departSelect" class="form-control form-control-line">
+                                            <option selected="selected" style="display: none;">请选择学院</option>
                                         </select>
+
+                                        <select id="majorSelect" class="form-control form-control-line">
+                                            <option selected="selected" style="display: none;">请选择专业</option>
+                                        </select>
+
+                                        <div id="classSelect" class="form-control form-control-line">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <button class="btn btn-success" onclick="makeClass()">创建课程</button>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <div class="col-sm-12">
-                                        <button class="btn btn-success">Update Profile</button>
-                                    </div>
-                                </div>
+
+
                             </form>
                         </div>
                     </div>
@@ -228,18 +270,128 @@
     <script>
         var account = {};
         var course = {};
+        var departSelect = {};
         var teachCourse = {};
         $(function () {
             teachInfo();
             courseQuery();
+            departQuery();
             // teachCourseQuery();
         });
+
+        function makeClass(){
+            let selectMajor = $("#majorSelect");
+            let classFormSelect = [];
+            classFormSelect.push("course", $("#courseSelect option:selected").val());
+            console.log($("#courseSelect option:selected").val());
+            console.log($("#courseSite").val());
+            classFormSelect.push("courseSite", $("#courseSite").val());
+
+            let siteCheckbox = [];
+            $.each($('input:checkbox[name=classCheckbox]:checked'),function(){
+                siteCheckbox.push($(this).val());
+                console.log("你选了："+
+                    $('input[type=Checkbox]:checked').length+"个，其中有："+$(this).val());
+            });
+            classFormSelect.push("siteCheckbox", siteCheckbox);
+
+            classFormSelect.push("major", selectMajor.selectedIndex);
+
+            let classCheckbox = [];
+            $.each($('input:checkbox[name=classCheckbox]:checked'),function () {
+                classCheckbox.push($(this).val());
+            });
+            classFormSelect.push("classFormSelect",classCheckbox)
+
+            $.ajax({
+                type:"post",
+                data:classFormSelect,
+                url: "/makeClass",
+                async: false,
+                processData: false,
+                contentType: false,
+                success:function (data) {
+                    alert("asd");
+                },
+                error:function () {
+                    alert("创建课程失败！");
+                }
+            })
+
+        }
+        $("#departSelect").on("change", function () {
+            departId = $("option:selected",this).val();//需求主键
+            majorQuery(departId);
+        });
+
+        $("#majorSelect").on("change", function () {
+            console.log("major click")
+            majorId = $("option:selected",this).val();//需求主键
+            classQuery(majorId);
+        });
+        function classQuery(majorId) {
+            console.log(majorId);
+            $.ajax({
+                type:"post",
+                data: {"majorId":majorId},
+                url: "/classQuery",
+                success:function (data) {
+                    let classSelect = $("#classSelect");
+                    classSelect.empty();
+                    for (let i = 0; i < data.length; i++) {
+                        classSelect.append("<input name='classSelectCheckbox' value=" + data[i].classId + " type=\"checkbox\"> " + data[i].classId);
+                    }
+                },
+                error:function () {
+                    alert("班级查询失败！");
+                }
+            })
+        }
+
+        function majorQuery(departId) {
+            console.log(departId);
+            $.ajax({
+                type: "post",
+                url: "/majorQuery",
+                data: {'departId':departId},
+                success: function (data) {
+                    let majorSelect = $("#majorSelect");
+                    for (let i = 0; i < data.length; i++) {
+                        majorSelect.append("<option value=" + data[i].majorId + ">" +  data[i].majorName + "</option>");
+                    };
+                },
+                error: function () {
+                    alert("学院查询错误！")
+                }
+            })
+        }
+        function departQuery() {
+            $.ajax({
+                type: "post",
+                url: "/departQuery",
+                success: function (data) {
+                    let departSelect = $("#departSelect");
+                    for (let i = 0; i < data.length; i++) {
+                        departSelect.append("<option value=" + data[i].departId + ">" +  data[i].departName + "</option>");
+                    }
+                },
+                error: function () {
+                    alert("专业查询错误！")
+                }
+            })
+
+        }
         function courseQuery(){
             $.ajax({
                 type: "post",
                 url: "/courseQuery",
                 success: function (data) {
-                    alert(data[0].course_id);
+                    let courseSelect = $("#courseSelect");
+                    course = data;
+                    console.log(data);
+                    for (let i = 0; i < course.length; i++) {
+                        courseSelect.append("<option value=" + course[i].courseId + ">" +  course[i].courseName + "</option>");
+                    }
                 },
                 error: function () {
                     alert("课程查询错误！")

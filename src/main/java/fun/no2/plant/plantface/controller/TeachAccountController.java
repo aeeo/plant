@@ -1,8 +1,7 @@
 package fun.no2.plant.plantface.controller;
 
-import fun.no2.plant.plantface.bean.Course;
-import fun.no2.plant.plantface.bean.TeachAccount;
-import fun.no2.plant.plantface.bean.TeachInfo;
+import fun.no2.plant.plantface.bean.*;
+import fun.no2.plant.plantface.service.OtherService;
 import fun.no2.plant.plantface.service.TeachAccountService;
 import fun.no2.plant.plantface.service.TeachInfoService;
 import org.apache.ibatis.annotations.Param;
@@ -26,6 +25,9 @@ public class TeachAccountController {
 
     @Autowired
     TeachInfoService teachInfoService;
+
+    @Autowired
+    OtherService otherService;
 
     @RequestMapping(value = "teachLoginSubmit")
     public String teachLoginSubmit(@RequestParam String teachId, @RequestParam String teachPassword, HttpServletResponse response, HttpServletRequest request) {
@@ -61,7 +63,36 @@ public class TeachAccountController {
         List<Course> courseList = teachInfoService.courseQuery();
         return courseList;
     }
+    //get all depart information
+    @RequestMapping(value = "departQuery")
+    @ResponseBody
+    public List<Depart> departQuery() {
+        List<Depart> departList = otherService.departQuery();
+        return departList;
+    }
+
+    //get all major information
+    @RequestMapping(value = "majorQuery")
+    @ResponseBody
+    public List<Major> majorQuery(@Param(value = "departId") String departId) {
+        List<Major> departList = otherService.majorQuery(departId);
+        return departList;
+    }
+    //query major student class
+    @RequestMapping(value = "/classQuery")
+    @ResponseBody
+    public List<StuClass> classQuery(@Param(value = "majorId") String majorId){
+        List<StuClass> stuClassList = otherService.queryStuClass(majorId);
+        return stuClassList  ;
+    }
 
 
+    //create student class
+    @RequestMapping(value = "/makeClass")
+    @ResponseBody
+    public List<StuClass> makeClass(){
+
+        return null  ;
+    }
 
 }
