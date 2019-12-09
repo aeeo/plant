@@ -46,7 +46,7 @@
                             <div>
                                 <input name="" type="checkbox" value=""><span>已阅读并同意<a href="#" target="_blank"><span class="lan">《人脸识别使用协议》</span></a></span>
                             </div>
-                            <button onclick="stuRegister()" class="btn_zhuce">注册</button>
+                            <input  type="button" onclick="stuRegister()" class="btn_zhuce" value="注册"></input>
                         </form>
 
                 </div>

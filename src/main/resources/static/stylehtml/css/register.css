@@ -1,5 +1,5 @@
 #mainDiv{width:250px;margin: 25px;}
-body{margin: 0 auto;padding: 0;background-color: #efefef;overflow: hidden}
+body{margin: 0 auto;padding: 0;background-color: #efefef;overflow:scroll}
 .container{margin: 0 auto;padding: 0;}
 #re-left{margin: 0 auto}
 /* CSS reset */

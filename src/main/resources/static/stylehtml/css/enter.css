@@ -1,6 +1,6 @@
-body{margin :0 auto;min-width:1024px;max-width:100%;overflow: hidden}
+body{margin :0 auto;min-width:1024px;max-width:100%;overflow:scroll}
 a,button{text-decoration: none;}
-a:hover{text-decoration: none;}
+a:hover{text-decoration: none;cursor: pointer;}
 a:focus {
     color: #23527c;
     text-decoration: none;
@@ -13,9 +13,9 @@ a:focus {
 .header-biaozhi img{float: left;margin-top: 0px;}
 .top-right{float: right;font-size: 22px;margin-right: 10%;margin-top: 40PX;;}
 .top-right a{color: #000000;margin-left: 20px;margin-right: 20px;}
-.top-right a:hover{color:#20bfee;text-decoration: none!important;}
+.top-right a:hover{color:#20bfee;text-decoration: none!important;cursor: pointer;}
 
-.top-right a:first-child{color: #20bfee;}
+.top-right a:first-child{color: #20bfee;cursor: pointer;}
 .top-right span{margin-left: 5px;margin-right: 5px;}
 #mainDiv{width: 250px;overflow: hidden;}
 #tbody{width: 100%;height: 500px;background-image: url("../img/6.jpg");padding-bottom:100px;}
