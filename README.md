@@ -11,7 +11,8 @@
     spring.datasource.druid.username
     spring.datasource.druid.password
 ```
-3. 访问首页的url
+3. JDK1.8
+4. 访问首页的url
 ```
     localhost:9080
 ```
