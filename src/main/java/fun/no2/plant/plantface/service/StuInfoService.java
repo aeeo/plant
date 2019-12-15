@@ -12,4 +12,5 @@ public interface StuInfoService {
 
     int stuInfoInsert(StuInfo stuInfo);
 
+    List<StuInfo> queryStuByMajorClass(String major, String[] classCheckbox);
 }

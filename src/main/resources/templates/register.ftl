@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <title>学生注册页面</title>
     <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css" >
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <script src="jquery/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" href="layui/css/layui.css"/>
     <link rel="stylesheet" href="stylehtml/css/register.css"/>
     <link rel="stylesheet" href="stylehtml/css/enter.css"/>
-    <script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+
+
 </head>
 <body>
 <div class="container">
@@ -32,25 +34,36 @@
                 </div>
                 <div class="bj_bai">
                     <h3>欢迎注册</h3>
-                        <form id="registerStuInfo"  method="post">
+                        <form id="registerStuInfo"  method="post" name="form">
+                            <span id="spanInStuId"></span>
                             <input id="inStuId" type="text" class="kuang_txt inStuId" name="inStuId" lay-verify="title" autocomplete="off" placeholder="请输入学号">
-                            <input id="inStuPassword" type="password" class="kuang_txt inStuPassword" name="inStuPassword" lay-verify="title" autocomplete="off" placeholder="请输入密码">
+                            <span id="spanInStuPassword"></span>
+                            <input id="inStuPassword" type="password" class="kuang_txt inStuPassword" name="inStuPassword" lay-verify="title" autocomplete="off" placeholder="请输入密码"><br>
+                            <span id="spanInStuName"></span>
                             <input id="inStuName" type="text" class="kuang_txt" name="inStuName" lay-verify="title" autocomplete="off" placeholder="请输入姓名">
-                            <input id="inStuSex" type="text" class="kuang_txt" name="inStuSex" lay-verify="title" autocomplete="off" placeholder="请输入性别">
+                            <span id="spanInStuSex"></span><br>
+                                <input id="inStuSex" type="radio" class="radio" name="inStuSex" lay-verify="title" autocomplete="off" value="男" checked="true"/><lable class="la-radio">男</lable>
+                                <input id="inStuSex1" type="radio" class="radio1" name="inStuSex" lay-verify="title" autocomplete="off" value="女" /><lable class="la-radio">女</lable><br>
+                            <span id="spanInStuSchool" ></span>
                             <input id="inStuSchool" type="text" class="kuang_txt" name="inStuSchool" lay-verify="title" autocomplete="off" placeholder="请输入学校">
+                            <span id="spanInStuDepart"></span>
                             <input id="inStuDepart" type="text" class="kuang_txt" name="inStuDepart" lay-verify="title" autocomplete="off" placeholder="请输入学院">
+                            <span id="spanInStuMajor"></span>
                             <input id="inStuMajor" type="text" class="kuang_txt" name="inStuMajor" lay-verify="title" autocomplete="off" placeholder="请输入专业">
+                            <span id="spanInStuGrade"></span>
                             <input id="inStuGrade" type="text" class="kuang_txt" name="inStuGrade" lay-verify="title" autocomplete="off" placeholder="请输入年级">
+                            <span id="spanInStuClass"></span>
                             <input id="inStuClass" type="text" class="kuang_txt" name="inStuClass" lay-verify="title" autocomplete="off" placeholder="请输入班级">
+                            <span id="spanInStuPhone"></span>
                             <input id="inStuPhone" type="text" class="kuang_txt inStuPhone" name="inStuPhone" lay-verify="title" autocomplete="off" placeholder="请输入联系方式">
+
                             <div>
-                                <input name="" type="checkbox" value=""><span>已阅读并同意<a href="#" target="_blank"><span class="lan">《人脸识别使用协议》</span></a></span>
+                                <input name="" type="checkbox" value="" id="checkbox-id"><em>已阅读并同意<a href="#" target="_blank"><em class="lan">《人脸识别使用协议》</em></a></em>
+                                <span id="spanAgree"></span>
                             </div>
                             <input  type="button" onclick="stuRegister()" class="btn_zhuce" value="注册"></input>
                         </form>
-
                 </div>
-
             </div>
         </div>
     </div>
@@ -59,10 +72,12 @@
 
 <#include "footer.ftl">
 </div>
+<script src="stylehtml/js/validate.js"></script>
 <script>
     $(function () {
         getMedia();
-
+        document.form.inStuId.focus();
+        validate();
     })
     function getMedia() {
         // $("#mainDiv").empty();
@@ -80,49 +95,8 @@
         });
     }
 
-    function stuRegister() {
-        let mainComp = $("#mainDiv");
-        //获得Canvas对象
-        let video = document.getElementById("video");
-        let canvas = document.getElementById("canvas");
-        let ctx = canvas.getContext('2d');
-        ctx.drawImage(video, 0, 0, 250, 250);
-        let formData = new FormData();
-        //保存当前图片
-        var base64File = canvas.toDataURL();
-        formData.append("file", base64File);
-        formData.append("inStuId", $("#inStuId").val());
-        formData.append("inStuPassword", $("#inStuPassword").val());
-        formData.append("inStuName", $("#inStuName").val());
-        formData.append("inStuSex", $("#inStuSex").val());
-        formData.append("inStuSchool", $("#inStuSchool").val());
-        formData.append("inStuDepart", $("#inStuDepart").val());
-        formData.append("inStuGrade", $("#inStuGrade").val());
-        formData.append("inStuMajor", $("#inStuMajor").val());
-        formData.append("inStuClass", $("#inStuClass").val());
-        formData.append("inStuPhone", $("#inStuPhone").val());
 
-        $.ajax({
-            type: "post",
-            url: "/stuRegister",
-            data: formData,
-            async:false,
-            contentType: false,
-            processData: false,
-            success: function (text) {
-                if (text == "register success") {
-                    alert("成功");
-                    window.location.href = 'index';
-                } else {
-                    alert("失败");
-                }
-            },
-            error: function (error) {
-                alert("失败")
-            }
-        });
 
-    }
 </script>
 </body>
 </html>

@@ -46,17 +46,21 @@
                 <div class="top-left-part">
                     <!-- Logo -->
                     <a class="logo" href="../teachIndex.ftl">
-                        <!-- Logo icon image, you can use font-icon also --><b>
-                            <!--This is dark logo icon--><img src="/plugins/images/admin-logo.png" alt="home"
-                                class="dark-logo" />
-                            <!--This is light logo icon--><img src="/plugins/images/admin-logo-dark.png" alt="home"
-                                class="light-logo" />
+                        <!-- Logo icon image, you can use font-icon also-->
+                        <b>
+<#--                            <!--This is dark logo icon&ndash;&gt;<img src="/plugins/images/admin-logo.png" alt="home"-->
+<#--                                class="dark-logo" />-->
+<#--                            <!--This is light logo icon&ndash;&gt;<img src="/plugins/images/admin-logo-dark.png" alt="home"-->
+<#--                                class="light-logo" />-->
+                        <h4>行星考勤</h4>
                         </b>
                         <!-- Logo text image you can use text also --><span class="hidden-xs">
-                            <!--This is dark logo text--><img src="/plugins/images/admin-text.png" alt="home"
-                                class="dark-logo" />
-                            <!--This is light logo text--><img src="/plugins/images/admin-text-dark.png" alt="home"
-                                class="light-logo" />
+                            <!--This is dark logo text-->
+<#--                            <img src="/plugins/images/admin-text.png" alt="home"-->
+<#--                                class="dark-logo" />-->
+<#--                            <!--This is light logo text&ndash;&gt;-->
+<#--                            <img src="/plugins/images/admin-text-dark.png" alt="home"-->
+<#--                                class="light-logo" />-->
                         </span> </a>
                 </div>
                 <!-- /Logo -->
@@ -72,7 +76,7 @@
                     </li>
                     <li>
                         <a class="profile-pic" href="#"> <img src="/plugins/images/users/varun.jpg" alt="user-img"
-                                width="36" class="img-circle"><b class="hidden-xs">Steave</b></a>
+                                width="36" class="img-circle"><b class="hidden-xs">欢迎登陆</b></a>
                     </li>
                 </ul>
             </div>
@@ -98,22 +102,22 @@
                         <a href="teachInfoMod" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i>信息修改</a>
                     </li>
                     <li>
-                        <a href="teachCourse" class="waves-effect"><i class="fa fa-table fa-fw" aria-hidden="true"></i>课程管理</a>
+                        <a href="teachCourse" class="waves-effect"><i class="fa fa-bars fa-fw" aria-hidden="true"></i>创建课程</a>
                     </li>
                     <li>
-                        <a href="teach/basic-table.html" class="waves-effect"><i class="fa fa-table fa-fw" aria-hidden="true"></i>学生信息管理</a>
+                        <a href="teachCourseTable" class="waves-effect"><i class="fa fa-table fa-fw" aria-hidden="true"></i>我的课程</a>
                     </li>
                     <li>
-                        <a href="teach/fontawesome.html" class="waves-effect"><i class="fa fa-font fa-fw" aria-hidden="true"></i>发布信息</a>
+                        <a href="teachStuCheck" class="waves-effect"><i class="fa fa-font fa-fw" aria-hidden="true"></i>学生考勤信息</a>
                     </li>
 
                     <li>
-                        <a href="teach/blank.html" class="waves-effect"><i class="fa fa-columns fa-fw" aria-hidden="true"></i>信息反馈</a>
+                        <a href="teachMess" class="waves-effect"><i class="fa fa-columns fa-fw" aria-hidden="true"></i>信息反馈</a>
                     </li>
                 </ul>
                 <div class="center p-20">
-                    <a href="#" target="_blank"
-                        class="btn btn-danger btn-block waves-effect waves-light">Upgrade to Pro</a>
+                    <a href="quit" target="_blank"
+                        class="btn btn-danger btn-block waves-effect waves-light">退出</a>
                 </div>
             </div>
         </div>
@@ -127,24 +131,19 @@
             <div class="container-fluid">
                 <div class="row bg-title">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Profile page</h4>
+                        <h4 class="page-title">信息修改</h4>
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-                        <a href="#" target="_blank"
-                            class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Upgrade
-                            to Pro</a>
+                        <a href="quit" target="_blank"
+                            class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">退出</a>
                         <ol class="breadcrumb">
-                            <li><a href="#">Dashboard</a></li>
-                            <li class="active">Profile Page</li>
                         </ol>
                     </div>
                 </div>
                 <!-- /.row -->
                 <!-- .row -->
                 <div class="row">
-                    <div class="col-md-4 col-xs-12">
-                    </div>
-                    <div class="col-md-8 col-xs-12">
+                    <div class="col-xs-12">
                         <div class="white-box">
                             <form class="form-horizontal form-material">
                                 <div class="form-group">

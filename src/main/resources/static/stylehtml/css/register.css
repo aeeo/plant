@@ -3,13 +3,12 @@ body{margin: 0 auto;padding: 0;background-color: #efefef;overflow:scroll}
 .container{margin: 0 auto;padding: 0;}
 #re-left{margin: 0 auto}
 /* CSS reset */
-
-
 .login_bj{ background:url(../images/bj_zhuce.jpg) no-repeat top center;}
 .zhuce_body{ float:left; width:100%; height:700px;}
 .zhuce_body .zhuce_kong{position:absolute; top:110px; left:50%; width:600px; height:700px; margin-left:-300px;text-align: center }
 .zhuce_body .zhuce_kong .zc{width:700px; height:700px;margin-top: 20px;}
-.zhuce_body .zhuce_kong .zc .bj_bai{ float:left; width:314px; height:600px;  background:#FFF;}
+.zhuce_body .zhuce_kong .zc .bj_bai{ float:left; width:314px; height:600px;  background:#FFF;overflow: hidden}
+.zhuce_body .zhuce_kong .zc .bj_bai span{color:red;width:194px;display:none;margin-left:14%;text-align: left }
 h3{ font:16px/70px "微软雅黑", "黑体"; color:#333333; width:270px; text-align:center;}
 .zhuce_body .zhuce_kong .zc .bj_right{ float:left;width:314px; height:600px;  background:#f8f8f8;}
 .zhuce_kong > p{font:16px/70px "微软雅黑", "黑体"; text-align:center; color:#fff;}
@@ -21,6 +20,10 @@ h3{ font:16px/70px "微软雅黑", "黑体"; color:#333333; width:270px; text-al
 .zhuce_body .zhuce_kong .zc .bj_bai .inStuPassword{background:url(../img/zc_16.jpg) no-repeat 10px 10px;}
 .zhuce_body .zhuce_kong .zc .bj_bai .yanzm{background:url(../images/zc_19.jpg) no-repeat 10px 10px; margin-bottom:0px;}
 
+
+.zhuce_body .zhuce_kong .zc .bj_bai .radio{margin-left: 20px; width:20px;height: 20px;display: inline;margin-left: -25%;margin-bottom: 10px;height:20px; vertical-align:text-top; margin-top:-1px;}
+.zhuce_body .zhuce_kong .zc .bj_bai .radio1{margin-left: 20px;width:20px;height: 20px; display: inline;margin-bottom: 10px;height:20px; vertical-align:text-top; margin-top:-1px;}
+.zhuce_body .zhuce_kong .zc .bj_bai .la-radio{line-height: 20px}
 .zhuce_body .zhuce_kong .zc .bj_bai .hui_kuang{ float:left; width:97px; height:31px; border:1px solid #dddddd;}
 .zhuce_body .zhuce_kong .zc .bj_bai .shuaxin{ float:left; margin:0px 0 0 150px; width:14px; height:14px;}
 .zhuce_body .zhuce_kong .zc .bj_bai div{ float:left; width:100%; line-height:43px;}

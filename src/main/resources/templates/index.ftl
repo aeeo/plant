@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>学生信息首页</title>
     <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="stylehtml/css/enter.css"/>
     <script src="jquery/jquery-3.3.1.min.js"></script>
     <script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <link rel="stylesheet" href="layui/css/layui.css"/>
@@ -15,6 +14,7 @@
     <script type="text/javascript" src="stylehtml/js/main.js"></script>
     <link rel="stylesheet" type="text/css" href="stylehtml/css/thems.css">
     <link rel="stylesheet" type="text/css" href="stylehtml/css/responsive.css">
+    <link rel="stylesheet" href="stylehtml/css/enter.css"/>
     <script language="javascript">
         $(window).load(function() {
             $('.flexslider').flexslider({
@@ -42,9 +42,8 @@
 
                 <div class="pst">
                     当前位置：
-                    <a href="">首页</a>>
-                    <a href="">关于行星考勤</a>>
-                    <a href="">个人信息</a>
+                    <a onclick="window.location.href='login'" class="aIndex">首页</a><
+                    <a id="clickNav">个人信息</a>
                 </div>
             </div>
             <div class="scd_m">
@@ -54,186 +53,13 @@
 
     </div>
 <#include "footer.ftl">
-
-
-    <#--    学生信息展示 bootstrap的样式-->
-        <#--<div class="col-md-12 column">
-            <dl>
-                <dt>
-                    学号
-                </dt>
-                <dd id="stuId">
-
-                </dd>
-                <dt>
-                    姓名
-                </dt>
-                <dd id="stuName">
-
-                </dd>
-                <dt>
-                    性别
-                </dt>
-                <dd id="stuSex">
-
-                </dd>
-                <dt>
-                    学校
-                </dt>
-                <dd id="stuSchool">
-
-                </dd>
-                <dt>
-                    学院
-                </dt>
-                <dd id="stuDepart">
-
-                </dd>
-                <dt>
-                    专业
-                </dt>
-                <dd id="stuMajor">
-
-                </dd>
-                <dt>
-                    年级
-                </dt>
-                <dd id="stuGrade">
-
-                </dd>
-                <dt>
-                    班级
-                </dt>
-                <dd id="stuClass">
-
-                </dd>
-                <dt>
-                    联系方式
-                </dt>
-                <dd id="stuPhone">
-
-                </dd>
-            </dl>
-        </div>-->
-    <#--    学生信息修改 Layui的样式-->
-    <#--<form class="layui-form" action="/stuInfoMod">
-        <div class="layui-form-item">
-            <label class="layui-form-label">学号</label>
-            <div class="layui-input-block">
-                <input id="inStuId" type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题"
-                       class="layui-input layui-disabled">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">姓名</label>
-            <div class="layui-input-block">
-                <input id="inStuName" type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题"
-                       class="layui-input layui-disabled">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">性别</label>
-            <div class="layui-input-block">
-                <input id="inStuSex" type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题"
-                       class="layui-input">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">学校</label>
-            <div class="layui-input-block">
-                <input id="inStuSchool" type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题"
-                       class="layui-input">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">学院</label>
-            <div class="layui-input-block">
-                <input id="inStuDepart" type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题"
-                       class="layui-input">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">专业</label>
-            <div class="layui-input-block">
-                <input id="inStuMajor" type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题"
-                       class="layui-input">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">年级</label>
-            <div class="layui-input-block">
-                <input id="inStuGrade" type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题"
-                       class="layui-input">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">班级</label>
-            <div class="layui-input-block">
-                <input id="inStuClass" type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题"
-                       class="layui-input">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">联系方式</label>
-            <div class="layui-input-block">
-                <input id="inStuPhone" type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题"
-                       class="layui-input">
-            </div>
-        </div>
-        <button type="submit" class="btn btn-primary btn-default btn-block" id="stuInfoMod">信息修改</button>-->
-    <#--<div class="row clearfix">
-        <div class="col-md-12 column">
-            <table class="table table-bordered table-hover">
-                <thead>
-                <tr>
-                    <th>
-                        学号
-                    </th>
-                    <th>
-                        课程名
-                    </th>
-                    <th>
-                        应到次数
-                    </th>
-                    <th>
-                        缺课次数
-                    </th>
-                    <th>
-                        代课老师
-                    </th>
-                    <th>
-                        备注
-                    </th>
-                </tr>
-                </thead>
-                <tbody id="tbody">
-
-                </tbody>
-            </table>
-        </div>
-    </div>-->
-    <#--<div class="row clearfix">
-        <div class="col-md-4 column">
-            <form id="modStuPassword" role="form" action="/modStuPassword" method="post">
-                <div class="form-group">
-                    <label for="">原密码</label>
-                    <input id="oldPassword" type="Password" class="form-control" name="oldPassword"/>
-                </div>
-                <div class="form-group">
-                    <label for="">密码</label>
-                    <input id="newPassword" type="Password" class="form-control" name="newPassword"/>
-                </div>
-                <button type="button" class="btn btn-default" onclick="modStuPasswordSubmit()">修改密码</button>
-            </form>
-        </div>
-    </div>-->
-
-
 </div>
+<script src="stylehtml/js/validate.js"></script>
 <script>
     var account = {};
 $(function () {
     stuInfo();
+
 })
 // 学生信息列表
 function stuInfo() {
@@ -298,89 +124,96 @@ function stuInfo() {
 
     //学生信息修改
     function stuInfoMod() {
+        $("#clickNav").html("信息修改");
         let dynamic = $(".scd_m");
         // let modStuList = "<form id=\"formMod\" class=\"layui-form\" method =\"post\" action=\"/stuStuInfoMod\">\n" +
         let modStuList = "<form id=\"formMod\" class=\"layui-form\" method =\"post\">\n" +
             "        <div class=\"layui-form-item\">\n" +
             "            <label class=\"layui-form-label\">学号</label>\n" +
             "            <div class=\"layui-input-block\">\n" +
-            "                <input id=\"inStuId\" type=\"text\" name=\"inStuId\" lay-verify=\"title\" autocomplete=\"off\" placeholder=\"请输入标题\"\n" +
-            "                       class=\"layui-input layui-disabled\">\n" +
+            "                <input id=\"inStuId\" type=\"text\" name=\"inStuId\" lay-verify=\"title\" readonly=\"readonly\" placeholder=\"学号输入不能为空\"\n" +
+            "                       class=\"layui-input layui-disabled\"><span class=\"spanStuId\">*学号不允许修改</span>\n" +
             "            </div>\n" +
             "        </div>\n" +
             "        <div class=\"layui-form-item\">\n" +
             "            <label class=\"layui-form-label\">姓名</label>\n" +
             "            <div class=\"layui-input-block\">\n" +
-            "                <input id=\"inStuName\" type=\"text\" name=\"inStuName\" lay-verify=\"title\" autocomplete=\"off\" placeholder=\"请输入标题\"\n" +
-            "                       class=\"layui-input layui-disabled\">\n" +
+            "                <input id=\"inStuName\" type=\"text\" name=\"inStuName\" lay-verify=\"title\" readonly=\"readonly\" placeholder=\"姓名输入不能为空\"\n" +
+            "                       class=\"layui-input layui-disabled\"><span class=\"spanStuId\">*姓名不允许修改</span>\n" +
             "            </div>\n" +
             "        </div>\n" +
             "        <div class=\"layui-form-item\">\n" +
             "            <label class=\"layui-form-label\">性别</label>\n" +
             "            <div class=\"layui-input-block\">\n" +
-            "                <input id=\"inStuSex\" type=\"text\" name=\"inStuSex\" lay-verify=\"title\" autocomplete=\"off\" placeholder=\"请输入标题\"\n" +
-            "                       class=\"layui-input\">\n" +
+            "  <input id=\"inStuSex\" type=\"radio\" class=\"radio\" name=\"inStuSex\" lay-verify=\"title\" autocomplete=\"off\" value=\"男\" checked=\"true\"/><lable class=\"la-radio\">男</lable>\n"+
+            "   <input id=\"inStuSex1\" type=\"radio\" class=\"radio1\" name=\"inStuSex\" lay-verify=\"title\" autocomplete=\"off\" value=\"女\" /><lable class=\"la-radio\">女</lable><br>\n"+
             "            </div>\n" +
             "        </div>\n" +
             "        <div class=\"layui-form-item\">\n" +
             "            <label class=\"layui-form-label\">学校</label>\n" +
             "            <div class=\"layui-input-block\">\n" +
-            "                <input id=\"inStuSchool\" type=\"text\" name=\"inStuSchool\" lay-verify=\"title\" autocomplete=\"off\" placeholder=\"请输入标题\"\n" +
-            "                       class=\"layui-input\">\n" +
+            "                <input id=\"inStuSchool\" type=\"text\" name=\"inStuSchool\" lay-verify=\"title\" autocomplete=\"off\" placeholder=\"学校输入不能为空\"\n" +
+            "                       class=\"layui-input\"><span id=\"spanInStuSchool\" ></span>\n" +
             "            </div>\n" +
             "        </div>\n" +
             "        <div class=\"layui-form-item\">\n" +
             "            <label class=\"layui-form-label\">学院</label>\n" +
             "            <div class=\"layui-input-block\">\n" +
-            "                <input id=\"inStuDepart\" type=\"text\" name=\"inStuDepart\" lay-verify=\"title\" autocomplete=\"off\" placeholder=\"请输入标题\"\n" +
-            "                       class=\"layui-input\">\n" +
+            "                <input id=\"inStuDepart\" type=\"text\" name=\"inStuDepart\" lay-verify=\"title\" autocomplete=\"off\" placeholder=\"学院输入不能为空\"\n" +
+            "                       class=\"layui-input\"><span id=\"spanInStuDepart\"></span>\n" +
             "            </div>\n" +
             "        </div>\n" +
             "        <div class=\"layui-form-item\">\n" +
             "            <label class=\"layui-form-label\">专业</label>\n" +
             "            <div class=\"layui-input-block\">\n" +
-            "                <input id=\"inStuMajor\" type=\"text\" name=\"inStuMajor\" lay-verify=\"title\" autocomplete=\"off\" placeholder=\"请输入标题\"\n" +
-            "                       class=\"layui-input\">\n" +
+            "                <input id=\"inStuMajor\" type=\"text\" name=\"inStuMajor\" lay-verify=\"title\" autocomplete=\"off\" placeholder=\"专业输入不能为空\"\n" +
+            "                       class=\"layui-input\"><span id=\"spanInStuMajor\"></span>\n" +
             "            </div>\n" +
             "        </div>\n" +
             "        <div class=\"layui-form-item\">\n" +
             "            <label class=\"layui-form-label\">年级</label>\n" +
             "            <div class=\"layui-input-block\">\n" +
-            "                <input id=\"inStuGrade\" type=\"text\" name=\"inStuGrade\" lay-verify=\"title\" autocomplete=\"off\" placeholder=\"请输入标题\"\n" +
-            "                       class=\"layui-input\">\n" +
+            "                <input id=\"inStuGrade\" type=\"text\" name=\"inStuGrade\" lay-verify=\"title\" autocomplete=\"off\" placeholder=\"年级输入不能为空\"\n" +
+            "                       class=\"layui-input\"><span id=\"spanInStuGrade\"></span>\n" +
             "            </div>\n" +
             "        </div>\n" +
             "        <div class=\"layui-form-item\">\n" +
             "            <label class=\"layui-form-label\">班级</label>\n" +
             "            <div class=\"layui-input-block\">\n" +
-            "                <input id=\"inStuClass\" type=\"text\" name=\"inStuClass\" lay-verify=\"title\" autocomplete=\"off\" placeholder=\"请输入标题\"\n" +
-            "                       class=\"layui-input\">\n" +
+            "                <input id=\"inStuClass\" type=\"text\" name=\"inStuClass\" lay-verify=\"title\" autocomplete=\"off\" placeholder=\"班级输入不能为空\"\n" +
+            "                       class=\"layui-input\"><span id=\"spanInStuClass\"></span>\n" +
             "            </div>\n" +
             "        </div>\n" +
             "        <div class=\"layui-form-item\">\n" +
             "            <label class=\"layui-form-label\">联系方式</label>\n" +
             "            <div class=\"layui-input-block\">\n" +
-            "                <input id=\"inStuPhone\" type=\"text\" name=\"inStuPhone\" lay-verify=\"title\" autocomplete=\"off\" placeholder=\"请输入标题\"\n" +
-            "                       class=\"layui-input\">\n" +
+            "                <input id=\"inStuPhone\" type=\"text\" name=\"inStuPhone\" lay-verify=\"title\" autocomplete=\"off\" placeholder=\"电话输入不能为空\"\n" +
+            "                       class=\"layui-input\"> <span id=\"spanInStuPhone\"></span>\n" +
             "            </div>\n" +
             "        </div>\n" +
             "        <button type=\"button\" onclick=\"modInfo()\" class=\"btn btn-default\" id=\"stuInfoMod\">信息修改</button>" +
             "</form>";
             // "        <button type=\"submit\" class=\"btn btn-default\" id=\"stuInfoMod\">信息修改</button>";
 
+
         dynamic.empty();
         dynamic.append(modStuList);
         $("#inStuId").attr("value", account.stuId);
         $("#inStuName").attr("value", account.stuName);
-        $("#inStuSex").attr("value", account.stuSex);
+        $('input:radio[name="inStuName"]:checked').attr("value", account.stuSex);
         $("#inStuSchool").attr("value", account.stuSchool);
         $("#inStuDepart").attr("value", account.stuDepart);
         $("#inStuMajor").attr("value", account.stuMajor);
         $("#inStuGrade").attr("value", account.stuGrade);
         $("#inStuClass").attr("value", account.stuClass);
         $("#inStuPhone").attr("value", account.stuPhone);
+        validate();
     }
+
+
     function modInfo() {
+        validateClick();
+
         $.ajax({
             type: "post",
             url: "stuStuInfoMod",
@@ -397,8 +230,9 @@ function stuInfo() {
             }
         });
     }
-
+//考勤情况
     function checkWork() {
+        $("#clickNav").html("考勤情况");
         let dynamic = $(".scd_m");
         let checkList = "<div class=\"row clearfix\">\n" +
             "        <div class=\"col-md-12 column\">\n" +
@@ -412,7 +246,7 @@ function stuInfo() {
             "                        课程名\n" +
             "                    </th>\n" +
             "                    <th>\n" +
-            "                        应到次数\n" +
+            "                        签到次数\n" +
             "                    </th>\n" +
             "                    <th>\n" +
             "                        缺课次数\n" +
@@ -488,11 +322,11 @@ function stuInfo() {
             "                </div>\n" +
             "                <div class=\"form-group\">\n" +
             "                    <label for=\"\">密码</label>\n" +
-            "                    <input id=\"newPassword\" type=\"Password\" class=\"form-control\" name=\"newPassword\"/>\n" +
+            "                    <input id=\"newPassword\" type=\"Password\" class=\"form-control\" name=\"newPassword\"/><span id=\"tishiChange\"></span>\n" +
             "                </div>\n" +
                 "                <div class=\"form-group\">\n" +
                 "                    <label for=\"\">确认密码</label>\n" +
-                "                    <input id=\"newPassword\" type=\"Password\" class=\"form-control\" name=\"newPassword\"/>\n" +
+                "                    <input id=\"newPassword1\" type=\"Password\" class=\"form-control\" name=\"newPassword\"/>\n" +
                 "                </div>\n" +
             "                <button type=\"button\" class=\"btn btn-default\" onclick=\"modStuPasswordSubmit()\">修改密码</button>\n" +
             "            </form>\n" +
@@ -500,8 +334,22 @@ function stuInfo() {
             "    </div>";
         dynamic.append(modPasswordList);
     }
+//密码修改
     function modStuPasswordSubmit() {
+        $("#clickNav").html("修改密码");
+        if(($("#newPassword").val())!=($("#newPassword1").val())){
+            $("#newPassword").css('border','1px solid red');
+            $("#newPassword1").css('border','1px solid red');
+            $("#tishiChange").css('display','inline');
+            $("#tishiChange").html("两次密码输入不一致");
+            return;
+        }
+        $("#newPassword1").on("focus",function () {
+            $("#tishiChange").css('display','block');
+            $("#tishiChange").html("");
+        });
         var stuId = new FormData();
+
         stuId.append("stuId", $.cookie("stuId"));
         stuId.append("oldPassword",$("#oldPassword").val());
         stuId.append("newPassword",$("#newPassword").val());
@@ -514,9 +362,9 @@ function stuInfo() {
             async: false,
             success(data){
                 if (data == "success") {
-                    alert("修改成功。");
+                    alert("修改成功！");
                 } else if(data == "fail"){
-                    alert("修改失败。");
+                    alert("密码输入有误！");
                 }
             },
             error(){

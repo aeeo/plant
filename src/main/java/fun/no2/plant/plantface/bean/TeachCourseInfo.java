@@ -1,47 +1,77 @@
 package fun.no2.plant.plantface.bean;
 
+import javax.persistence.Column;
+
 public class TeachCourseInfo {
-    private String teach_id;
-    private String teach_name;
-    private int teach_course_id;
-    private int course_id;
+    private String teachId;
+    private String teachName;
+    private int teachCourseId;
+    private int courseId;
+    private String courseName;
 
-    public TeachCourseInfo(String teach_id, String teach_name, int teach_course_id, int course_id) {
-        this.teach_id = teach_id;
-        this.teach_name = teach_name;
-        this.teach_course_id = teach_course_id;
-        this.course_id = course_id;
+    public String getCourseName() {
+        return courseName;
     }
 
-    public String getTeach_id() {
-        return teach_id;
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
     }
 
-    public void setTeach_id(String teach_id) {
-        this.teach_id = teach_id;
+    public TeachCourseInfo() {
     }
 
-    public String getTeach_name() {
-        return teach_name;
+    public String getTeachId() {
+        return teachId;
     }
 
-    public void setTeach_name(String teach_name) {
-        this.teach_name = teach_name;
+    public void setTeachId(String teachId) {
+        this.teachId = teachId;
     }
 
-    public int getTeach_course_id() {
-        return teach_course_id;
+    public String getTeachName() {
+        return teachName;
     }
 
-    public void setTeach_course_id(int teach_course_id) {
-        this.teach_course_id = teach_course_id;
+    public void setTeachName(String teachName) {
+        this.teachName = teachName;
     }
 
-    public int getCourse_id() {
-        return course_id;
+    public int getTeachCourseId() {
+        return teachCourseId;
     }
 
-    public void setCourse_id(int course_id) {
-        this.course_id = course_id;
+    public void setTeachCourseId(int teachCourseId) {
+        this.teachCourseId = teachCourseId;
+    }
+
+    public int getCourseId() {
+        return courseId;
+    }
+
+    public void setCourseId(int courseId) {
+        this.courseId = courseId;
+    }
+
+    public TeachCourseInfo(String teachId, String teachName, int teachCourseId, int courseId) {
+        this.teachId = teachId;
+        this.teachName = teachName;
+        this.teachCourseId = teachCourseId;
+        this.courseId = courseId;
+    }
+    public TeachCourseInfo(String teachId, String teachName, int courseId ,String courseName) {
+        this.teachId = teachId;
+        this.teachName = teachName;
+        this.courseId = courseId;
+        this.courseName = courseName;
+    }
+
+    @Override
+    public String toString() {
+        return "TeachCourseInfo{" +
+                "teachId='" + teachId + '\'' +
+                ", teachName='" + teachName + '\'' +
+                ", teachCourseId=" + teachCourseId +
+                ", courseId=" + courseId +
+                '}';
     }
 }

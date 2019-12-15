@@ -5,8 +5,9 @@ a:focus {
     color: #23527c;
     text-decoration: none;
 }
+
 .container{width: 100%;margin: 0 auto;padding: 0;}
-.header-xingxing{width: 100%;height: 90px;background-color: #fefefe;border-bottom: 1px solid #e1e1e2;}
+.header-xingxing{width: 100%;height: 90px;background-color: #fefefe;border-bottom: 1px solid #e1e1e2; }
 .header-biaozhi{height: 90px;width: 340px;margin-left: 110px;float: left;}
 .header-biaozhi p{font-size: 26px;color: #333333;margin-top: 10px;padding-top: 10px;font-family:黑体;}
 .header-biaozhi span{font-size:18px ;color: hsl(0, 0%, 58%);padding-top: 0px;margin-top: 0px;line-height: 20px;}
@@ -15,7 +16,7 @@ a:focus {
 .top-right a{color: #000000;margin-left: 20px;margin-right: 20px;}
 .top-right a:hover{color:#20bfee;text-decoration: none!important;cursor: pointer;}
 
-.top-right a:first-child{color: #20bfee;cursor: pointer;}
+
 .top-right span{margin-left: 5px;margin-right: 5px;}
 #mainDiv{width: 250px;overflow: hidden;}
 #tbody{width: 100%;height: 500px;background-image: url("../img/6.jpg");padding-bottom:100px;}
@@ -28,6 +29,7 @@ a:focus {
 .link{width: 1px;height: 40px;border: 1px solid #e0e0e0;margin-left: 10px;margin-right: 10px;}
 .b-logo-botom{margin-top: 20PX;display: none;text-align: center}
 b-logo-botom a{padding-left: 40px}
+.b-logo-botom span{color: red;float: left;margin-left: 15%;display:none}
 .b-logo-botom input{width: 250px;height: 40px;margin-bottom: 25px;font-size: 16px;padding-left: 18px;border: 1px solid #e0e0e0}
 #submit{width:250px;margin-top: 12px;height: 40px;margin-bottom: 18px;background-color: #ff6700;border: 0px;color: #ffffff}
 #a-left{margin-left:38px;text-align: center;color: #ff6700;font-size: 18px;}

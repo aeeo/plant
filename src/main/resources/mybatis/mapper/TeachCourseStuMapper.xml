@@ -1,0 +1,15 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="fun.no2.plant.plantface.mapper.TeachCourseStuMapper">
+
+    <select id="selectStuMajorClassByCourseId" resultMap="selectStuMajorClassByCourseIdMap">
+        SELECT stu_major, stu_info.stu_class from stu_info where stu_id in (SELECT teach_course_stu.stu_id from teach_course_stu where teach_course_id = #{teachCourseId}) GROUP BY stu_info.stu_class;
+    </select>
+    <resultMap type="java.util.HashMap" id="selectStuMajorClassByCourseIdMap">
+        <result column="stu_major" property="stuMajor"/>
+        <result column="stu_class" property="stuClass"/>
+    </resultMap>
+
+
+</mapper>

@@ -25,4 +25,19 @@ public class StuCheckingServiceImpl implements StuCheckingService {
 
         return stuCheckingList;
     }
+
+    @Override
+    public void addStuChecking(StuChecking stuChecking) {
+        stuCheckingMapper.insertSelective(stuChecking);
+    }
+
+    @Override
+    public List<StuChecking> queryCheckingByCourseId(String teachCourseId) {
+        Example example = new Example(StuChecking.class);
+        example.createCriteria().andEqualTo("teachCourseId", teachCourseId);
+        List<StuChecking> stuCheckings = stuCheckingMapper.selectByExample(example);
+
+        return stuCheckings;
+    }
+
 }

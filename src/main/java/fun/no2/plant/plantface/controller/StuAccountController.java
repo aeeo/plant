@@ -40,13 +40,17 @@ public class StuAccountController {
         StuFaceAccount stuFaceAccount = stuFaceAccountService.queryAccount(userId, userPassword);
         HttpSession session = request.getSession();
         session.setAttribute("newLogin", "0");
+        if (stuFaceAccount != null) {
+            Cookie cookie = new Cookie("stuId", stuFaceAccount.getUserId());
+            //存在时间，单位为秒，下边表示存半小时，与session一样
+            cookie.setMaxAge(60 * 30);
+            //把cookie存到response中，响应时将把cookie信息带回浏览器，保存到浏览器中
+            response.addCookie(cookie);
+            return "redirect:index";
+        } else {
+            return "login";
+        }
 
-        Cookie cookie = new Cookie("stuId", stuFaceAccount.getUserId());
-        //存在时间，单位为秒，下边表示存半小时，与session一样
-        cookie.setMaxAge(60*30);
-        //把cookie存到response中，响应时将把cookie信息带回浏览器，保存到浏览器中
-        response.addCookie(cookie);
-        return "redirect:index";
     }
 
     @RequestMapping(value = "/stuInfoQuery")

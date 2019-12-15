@@ -43,6 +43,10 @@ public class TeachAccount {
         this.teachPassword = teachPassword;
         this.teachName = teachName;
     }
+    public TeachAccount(String teachId,String teachName) {
+        this.teachId = teachId;
+        this.teachName = teachName;
+    }
     public TeachAccount() {
     }
 }

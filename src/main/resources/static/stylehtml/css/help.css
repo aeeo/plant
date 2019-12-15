@@ -1,0 +1,35 @@
+.col-md-6 {
+background-color: white;
+    width: 50%;
+height: 100%;
+}
+.row {
+    }
+.col-md-2 {
+    padding-left: 15px;
+    padding-right: 0px;
+    width: 25%;
+    height:100%;
+    background-color: #f5f6f9;
+    border-right: 1px solid #ebebeb;
+}
+.col-md-4 {
+    padding: 0px;
+    width: 25%;
+
+}
+.row{margin-top: 0px;padding-top: 0px}
+.pagination{margin: 0 auto}
+.list-group-item:hover{color: #fff;
+    background-color: #337ab7;
+    border-color: white; }
+body{;height: 100%}
+
+blockquote{background-color: white}
+.list-group-item.active{}
+
+#help-body{height: 100%}
+.column{height: 100%}
+.row{height: 100%}
+#help-body-left{padding:20px;height: 600px}
+.help-body-left-a{padding:20px;height: 100%}

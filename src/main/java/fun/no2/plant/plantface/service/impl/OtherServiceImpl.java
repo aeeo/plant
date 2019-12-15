@@ -46,6 +46,5 @@ public class OtherServiceImpl implements OtherService {
         example.createCriteria().andEqualTo("majorId", majorId);
         List<StuClass> stuClassList = stuClassMapper.selectByExample(example);
         return stuClassList;
-//        return stuClassList;
     }
 }

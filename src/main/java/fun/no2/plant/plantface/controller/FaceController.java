@@ -93,7 +93,6 @@ public class FaceController {
         BufferedImage bufImage = ImageIO.read(new ByteArrayInputStream(decode));
         ImageInfo imageInfo = ImageFactory.bufferedImage2ImageInfo(bufImage);
 
-
         //人脸特征获取
         byte[] bytes = faceEngineService.extractFaceFeature(imageInfo);
         if (bytes == null) {
@@ -145,15 +144,15 @@ public class FaceController {
 
     private String base64Process(String base64Str) {
         if (!StringUtils.isEmpty(base64Str)) {
-            String photoBase64 = base64Str.substring(0, 30).toLowerCase();
-            int indexOf = photoBase64.indexOf("base64,");
-            if (indexOf > 0) {
-                base64Str = base64Str.substring(indexOf + 7);
-            }
+                String photoBase64 = base64Str.substring(0, 30).toLowerCase();
+                int indexOf = photoBase64.indexOf("base64,");
+                if (indexOf > 0) {
+                    base64Str = base64Str.substring(indexOf + 7);
+                }
 
-            return base64Str;
-        } else {
-            return "";
+                return base64Str;
+            } else {
+                return "";
         }
     }
 }

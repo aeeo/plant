@@ -9,12 +9,6 @@ import java.util.List;
 
 public interface MybatisUserFaceInfoMapper extends Mapper<StuFaceAccount> {
 
-    List<StuFaceAccount> findUserFaceInfoList();
-
-    void insertUserFaceInfo(StuFaceAccount stuFaceAccount);
-
-    List<StuFaceAccount> getUserFaceInfoByGroupId(Integer groupId);
-
     @Update("update stu_face_account set user_password=#{userPassword} where user_id like #{userId}")
     int updataStuFaceAccount(StuFaceAccount stuFaceAccount);
 }
